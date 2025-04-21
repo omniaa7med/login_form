@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
+
+      <!-- Email Field -->
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" />
+        <mat-error *ngIf="form.controls['email'].touched && form.controls['email'].invalid">
+          <span *ngIf="form.controls['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="form.controls['email'].errors?.['email']">Please enter a valid email address.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Enter your password" />
+        <mat-error *ngIf="form.controls['password'].touched && form.controls['password'].invalid">
+          <span *ngIf="form.controls['password'].errors?.['required']">Password is required.</span>
+          <span *ngIf="form.controls['password'].errors?.['minlength']">Password must be at least 6 characters
+            long.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="form.invalid">
+          Login
+        </button>
+      </div>
+
+      <!-- Error Message -->
+      <mat-error *ngIf="errorMessage" class="error-message">{{ errorMessage }}</mat-error>
+
+    </form>
+
+    <div class="login-link">
+      Don't have an account?
+      <a routerLink="/register">Register</a>
+    </div>
+  </mat-card>
+</div>

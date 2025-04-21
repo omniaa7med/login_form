@@ -1,0 +1,44 @@
+.register-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+mat-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 10px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
